@@ -13,6 +13,22 @@ const addNumber = (num) => {
     }
   };
 
+const resetAll = () => {
+    setList([]);
+    if (counterResetRef.current) {
+      counterResetRef.current();
+    }
+  };
+
+  const counterResetRef = React.useRef(null);
+
+  const sendResetFunction = (resetFunc) => {
+    counterResetRef.current = resetFunc;
+  };
+
+
+
+
 const sortedList = [...list].sort((a, b) => (sortAsc ? a - b : b - a));
 
   return (
@@ -40,6 +56,22 @@ const sortedList = [...list].sort((a, b) => (sortAsc ? a - b : b - a));
       >
         Sort {sortAsc ? "Descending" : "Ascending"}
       </button>
+
+ <button
+        onClick={resetAll}
+        style={{
+          marginTop: 15,
+          padding: "8px 16px",
+          cursor: "pointer",
+          backgroundColor: "gray",
+          color: "white",
+          border: "none",
+          borderRadius: 4,
+        }}
+      >
+        Reset
+      </button>
+
     </div>
   );
 }

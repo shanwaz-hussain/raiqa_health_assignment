@@ -13,7 +13,7 @@ export default function Counter({ addNumber }) {
 
   return (
     <div style={{ marginBottom: 20 }}>
-      <h2>Counter</h2>
+      <h2>Counter & List App</h2>
       <div style={{ fontSize: 48, marginBottom: 20 }}>{count}</div>
       <button
         onClick={decrement}
