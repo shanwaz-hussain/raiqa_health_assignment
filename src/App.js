@@ -1,3 +1,4 @@
+import './App.css';
 import React, { useState } from "react";
 import Counter from "./Counter";
 import ListView from "./ListView";
@@ -7,17 +8,17 @@ export default function App() {
   const [list, setList] = useState([]);
   const [sortAsc, setSortAsc] = useState(true);
 
-const addNumber = (num) => {
+  const addNumber = (num) => {
     if (num > 0) {
       if (list.includes(num)) {
         alert(`Number ${num} is already in the list!`);
       } else {
-      setList((prevList) => [...prevList, num]);
+        setList((prevList) => [...prevList, num]);
+      }
     }
-  }
   };
 
-const resetAll = () => {
+  const resetAll = () => {
     setList([]);
     if (counterResetRef.current) {
       counterResetRef.current();
@@ -33,49 +34,29 @@ const resetAll = () => {
 
 
 
-const sortedList = [...list].sort((a, b) => (sortAsc ? a - b : b - a));
+  const sortedList = [...list].sort((a, b) => (sortAsc ? a - b : b - a));
 
   return (
-    <div
-      style={{
-        maxWidth: 320,
-        margin: "20px auto",
-        fontFamily: "Arial, sans-serif",
-        textAlign: "center",
-      }}
-    >
-     <Counter addNumber={addNumber} />
-      <ListView list={sortedList} />
-      <button
-        onClick={() => setSortAsc(!sortAsc)}
-        style={{
-          marginTop: 15,
-          padding: "8px 16px",
-          cursor: "pointer",
-          backgroundColor: "#0070f3",
-          color: "white",
-          border: "none",
-          borderRadius: 4,
-        }}
-      >
-        Sort {sortAsc ? "Descending" : "Ascending"}
-      </button>
+    <div className="app-container" >
+      <Counter addNumber={addNumber} />
+      <div className="section">
+        <ListView list={sortedList} />
+        <div className="btn-bar">
+          <button
+            onClick={() => setSortAsc(!sortAsc)}
+            className="app-btn"
+          >
+            Sort {sortAsc ? "Descending" : "Ascending"}
+          </button>
 
- <button
-        onClick={resetAll}
-        style={{
-          marginTop: 15,
-          padding: "8px 16px",
-          cursor: "pointer",
-          backgroundColor: "gray",
-          color: "white",
-          border: "none",
-          borderRadius: 4,
-        }}
-      >
-        Reset
-      </button>
-
+          <button
+            onClick={resetAll}
+            className="app-btn gray"
+          >
+            Reset
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

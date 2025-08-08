@@ -12,23 +12,20 @@ export default function Counter({ addNumber }) {
   };
 
   return (
-    <div style={{ marginBottom: 20 }}>
+    <div className="section" style={{ marginBottom: 20 }}>
       <h2>Counter & List App</h2>
-      <div style={{ fontSize: 48, marginBottom: 20 }}>{count}</div>
+      <div className="big-number">{count}</div>
+      <div className="btn-bar">
       <button
         onClick={decrement}
         disabled={count === 0}
-        style={{
-          marginRight: 10,
-          padding: "8px 16px",
-          cursor: count === 0 ? "not-allowed" : "pointer",
-        }}
+        className="app-btn"
       >
         -
       </button>
       <button
         onClick={increment}
-        style={{ marginRight: 10, padding: "8px 16px", cursor: "pointer" }}
+        className="app-btn"
       >
         +
       </button>
@@ -36,11 +33,11 @@ export default function Counter({ addNumber }) {
       <button
         onClick={handleAdd}
         disabled={count === 0}
-        style={{ padding: "8px 16px", cursor: count === 0 ? "not-allowed" : "pointer" }}
+       className="app-btn"
       >
         Add
       </button>
-      
+      </div>
     </div>
   );
 }

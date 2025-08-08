@@ -1,38 +1,92 @@
-.App {
-  text-align: center;
+.app-container {
+  max-width: 340px;
+  margin: 40px auto;
+  border: 1px solid #ebebeb;
+  border-radius: 14px;
+  background: #f8fafc;
+  padding: 28px 12px 26px 12px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.section {
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px 12px 20px 12px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(60,84,120,0.04);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* Center all children horizontally */
+}
+
+.counter-header, .list-header {
+  text-align: center;
+  width: 100%;
+  margin-top: 0;
+}
+
+.big-number {
+  font-size: 50px;
+  font-weight: bold;
+  margin: 14px 0 24px 0;
+  color: #222;
+  text-align: center;
+  width: 100%;
+}
+
+.btn-bar {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 12px;
+  margin-top: 6px;
 }
 
-.App-link {
-  color: #61dafb;
+.app-btn {
+  background: #0070f3;
+  color: #fff;
+  border: none;
+  padding: 9px 20px;
+  border-radius: 4px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: background 0.15s;
+  outline: none;
+  min-width: 58px;
+}
+.app-btn:disabled {
+  background: #b1b1b1;
+  cursor: not-allowed;
+}
+.app-btn.gray {
+  background: #888;
+}
+.app-btn:hover:not(:disabled) {
+  background: #025abc;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.list-section {
+  margin-top: 6px;
+  width: 100%;
+}
+
+.number-list {
+  list-style: decimal inside;
+  margin: 6px 0 0 0;
+  padding: 0;
+  width: 100%;
+  min-height: 26px;
+}
+.number-list li {
+  padding: 2px 0;
+  font-size: 17px;
+}
+
+.empty-msg {
+  color: #aaa;
+  margin: 8px 0 0 0;
+  font-style: italic;
+  min-height: 22px;
+  text-align: center;
+  width: 100%;
 }

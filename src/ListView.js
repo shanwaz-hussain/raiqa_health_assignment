@@ -5,11 +5,11 @@ export default function ListView({ list }) {
     <div>
       <h3>Number List</h3>
       {list.length === 0 ? (
-        <p>No numbers added yet</p>
+        <p className="empty-msg">No numbers added yet</p>
       ) : (
-        <ul style={{ paddingLeft: 20, textAlign: "left" }}>
+        <ul className="number-list">
           {list.map((num, index) => (
-            <li key={index} style={{ marginBottom: 4 }}>
+            <li key={index}>
               {num}
             </li>
           ))}
