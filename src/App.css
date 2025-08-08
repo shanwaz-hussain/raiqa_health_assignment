@@ -59,11 +59,12 @@
   cursor: not-allowed;
 }
 .app-btn.gray {
-  background: #888;
+  background: #e53935;  
 }
-.app-btn:hover:not(:disabled) {
-  background: #025abc;
+.app-btn.gray:hover:not(:disabled) {
+  background: #b71c1c;
 }
+
 
 .list-section {
   margin-top: 6px;
