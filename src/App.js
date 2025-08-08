@@ -5,12 +5,15 @@ import ListView from "./ListView";
 export default function App() {
 
   const [list, setList] = useState([]);
+  const [sortAsc, setSortAsc] = useState(true);
 
 const addNumber = (num) => {
     if (num > 0 && !list.includes(num)) {
       setList((prevList) => [...prevList, num]);
     }
   };
+
+const sortedList = [...list].sort((a, b) => (sortAsc ? a - b : b - a));
 
   return (
     <div
@@ -22,7 +25,21 @@ const addNumber = (num) => {
       }}
     >
      <Counter addNumber={addNumber} />
-      <ListView list={list} />
+      <ListView list={sortedList} />
+      <button
+        onClick={() => setSortAsc(!sortAsc)}
+        style={{
+          marginTop: 15,
+          padding: "8px 16px",
+          cursor: "pointer",
+          backgroundColor: "#0070f3",
+          color: "white",
+          border: "none",
+          borderRadius: 4,
+        }}
+      >
+        Sort {sortAsc ? "Descending" : "Ascending"}
+      </button>
     </div>
   );
 }
