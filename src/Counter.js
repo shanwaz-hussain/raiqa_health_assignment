@@ -19,13 +19,13 @@ export default function Counter({ addNumber }) {
       <button
         onClick={decrement}
         disabled={count === 0}
-        className="app-btn"
+         className="app-btn minus-btn"
       >
         -
       </button>
       <button
         onClick={increment}
-        className="app-btn"
+        className="app-btn plus-btn"
       >
         +
       </button>
@@ -33,7 +33,7 @@ export default function Counter({ addNumber }) {
       <button
         onClick={handleAdd}
         disabled={count === 0}
-       className="app-btn"
+       className="app-btn add-btn"
       >
         Add
       </button>

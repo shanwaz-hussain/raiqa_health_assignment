@@ -1,9 +1,9 @@
 .app-container {
-  max-width: 340px;
+  max-width: 360px;
   margin: 40px auto;
-  border: 1px solid #ebebeb;
+  border: 1px solid #e6e9ed;
   border-radius: 14px;
-  background: #f8fafc;
+  background: #f3f5f9;
   padding: 28px 12px 26px 12px;
   font-family: 'Segoe UI', Arial, sans-serif;
   box-sizing: border-box;
@@ -12,18 +12,20 @@
 .section {
   background: #fff;
   border-radius: 10px;
-  padding: 18px 12px 20px 12px;
+  box-shadow: 0 2px 7px rgba(60,90,130,0.06);
+  padding: 20px 16px 20px 16px;
   margin-bottom: 18px;
-  box-shadow: 0 2px 8px rgba(60,84,120,0.04);
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center all children horizontally */
+  align-items: center;
 }
 
 .counter-header, .list-header {
   text-align: center;
   width: 100%;
   margin-top: 0;
+  color: #1992d4;
+  font-weight: 600;
 }
 
 .big-number {
@@ -39,44 +41,106 @@
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-top: 6px;
+  margin-top: 10px;
 }
 
 .app-btn {
-  background: #0070f3;
-  color: #fff;
-  border: none;
-  padding: 9px 20px;
-  border-radius: 4px;
+  padding: 9px 22px;
   font-size: 17px;
-  cursor: pointer;
-  transition: background 0.15s;
-  outline: none;
+  border-radius: 4px;
+  font-weight: 500;
   min-width: 58px;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: background 0.14s, color 0.12s, border-color 0.12s;
+  outline: none;
 }
-.app-btn:disabled {
+
+/* Plus = green; Minus = red; Add = blue; Reset = red solid */
+.plus-btn {
+  background: #fff;
+  color: #2e7d32;
+  border-color: #2e7d32;
+}
+.plus-btn:disabled {
+  color: #aacbaa;
+  border-color: #aacbaa;
+  cursor: not-allowed;
+  background: #f6f6f6;
+}
+.plus-btn:hover:not(:disabled),
+.plus-btn:focus-visible:not(:disabled) {
+  background: #e8f5e9;
+}
+
+.minus-btn {
+  background: #fff;
+  color: #d32f2f;
+  border-color: #d32f2f;
+}
+.minus-btn:disabled {
+  color: #e49b9b;
+  border-color: #e49b9b;
+  cursor: not-allowed;
+  background: #f6f6f6;
+}
+.minus-btn:hover:not(:disabled),
+.minus-btn:focus-visible:not(:disabled) {
+  background: #fdeaea;
+}
+
+.add-btn {
+  background: #1992d4;
+  border: none;
+  color: #fff;
+}
+.add-btn:disabled {
   background: #b1b1b1;
+  color: #f6f6f6;
   cursor: not-allowed;
 }
+.add-btn:hover:not(:disabled),
+.add-btn:focus-visible:not(:disabled) {
+  background: #086ab8;
+}
+
 .app-btn.gray {
-  background: #e53935;  
+  background: #e53935;
+  border: none;
+  color: #fff;
 }
 .app-btn.gray:hover:not(:disabled) {
   background: #b71c1c;
 }
 
+/* Sort button: blue-gray accent */
+.sort-btn {
+  background: #667eea;
+  color: #fff;
+  border: none;
+  font-weight: 500;
+}
+.sort-btn:disabled {
+  background: #cfd7ef;
+  color: #fff;
+}
+.sort-btn:hover:not(:disabled),
+.sort-btn:focus-visible:not(:disabled) {
+  background: #5a67d8;
+}
 
 .list-section {
-  margin-top: 6px;
+  margin-top: 12px;
   width: 100%;
 }
 
 .number-list {
   list-style: decimal inside;
-  margin: 6px 0 0 0;
+  margin: 8px 0 0 0;
   padding: 0;
   width: 100%;
   min-height: 26px;
+  color: #333;
 }
 .number-list li {
   padding: 2px 0;

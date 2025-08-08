@@ -44,7 +44,7 @@ export default function App() {
         <div className="btn-bar">
           <button
             onClick={() => setSortAsc(!sortAsc)}
-            className="app-btn"
+            className="app-btn sort-btn"
           >
             Sort {sortAsc ? "Descending" : "Ascending"}
           </button>
