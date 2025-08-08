@@ -8,9 +8,13 @@ export default function App() {
   const [sortAsc, setSortAsc] = useState(true);
 
 const addNumber = (num) => {
-    if (num > 0 && !list.includes(num)) {
+    if (num > 0) {
+      if (list.includes(num)) {
+        alert(`Number ${num} is already in the list!`);
+      } else {
       setList((prevList) => [...prevList, num]);
     }
+  }
   };
 
 const resetAll = () => {
